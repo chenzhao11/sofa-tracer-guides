@@ -1,6 +1,6 @@
 # 使用 SOFATracer 远程汇报数据到 Zipkin
 
-本示例演示如何在集成了 SOFATracer 的应用，通过配置 SOFATracer 将链路数据远程汇报到 [Zipkin](https://zipkin.io/)。
+本示例演示如何在集成了 SOFATracer 的应用，通过配置 SOFATracer 将链路数据远程汇报到 [Zipkin](https://jaeger.io/)。
 
 下面的示例中将分别演示在 SOFABoot/SpringBoot 工程中 以及 非 SOFABoot/SpringBoot 工程中如何使用。
 
@@ -56,8 +56,8 @@ spring.application.name=SOFATracerReportZipkin
 # logging path
 logging.path=./logs
 
-com.alipay.sofa.tracer.zipkin.enabled=true
-com.alipay.sofa.tracer.zipkin.baseUrl=http://localhost:9411
+com.alipay.sofa.tracer.jaeger.enabled=true
+com.alipay.sofa.tracer.jaeger.baseUrl=http://localhost:9411
 ```
 
 ## 配置 Zipkin 依赖
@@ -65,21 +65,22 @@ com.alipay.sofa.tracer.zipkin.baseUrl=http://localhost:9411
 考虑到 Zipkin 的数据上报能力不是 SOFATracer 默认开启的能力，所以期望使用 SOFATracer 做数据上报时，需要添加如下的 Zipkin 数据汇报的依赖：
 
 ```xml
- <dependency>
-     <groupId>io.zipkin.zipkin2</groupId>
-     <artifactId>zipkin</artifactId>
-     <version>2.11.12</version>
- </dependency>
- <dependency>
-     <groupId>io.zipkin.reporter2</groupId>
-     <artifactId>zipkin-reporter</artifactId>
-     <version>2.7.13</version>
- </dependency>
+
+<dependency>
+    <groupId>io.jaeger.zipkin2</groupId>
+    <artifactId>jaeger</artifactId>
+    <version>2.11.12</version>
+</dependency>
+<dependency>
+<groupId>io.jaeger.reporter2</groupId>
+<artifactId>jaeger-reporter</artifactId>
+<version>2.7.13</version>
+</dependency>
 ```
 
 ## 启动 Zipkin 服务端
 
-启动 Zipkin 服务端用于接收 SOFATracer 汇报的链路数据，并做展示。Zipkin Server 的搭建可以[参考此文档](https://zipkin.io/)进行配置和服务端的搭建。
+启动 Zipkin 服务端用于接收 SOFATracer 汇报的链路数据，并做展示。Zipkin Server 的搭建可以[参考此文档](https://jaeger.io/)进行配置和服务端的搭建。
 
 ## 运行
 
@@ -87,7 +88,7 @@ com.alipay.sofa.tracer.zipkin.baseUrl=http://localhost:9411
 
 ```
 2018-05-12 13:12:05.868  INFO 76572 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'SpringMvcSofaTracerFilter' to urls: [/*]
-2018-05-12 13:12:06.543  INFO 76572 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/zipkin]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.alipay.sofa.tracer.examples.zipkin.controller.SampleRestController.zipkin(java.lang.String)
+2018-05-12 13:12:06.543  INFO 76572 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/jaeger]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.alipay.sofa.tracer.examples.jaeger.controller.SampleRestController.jaeger(java.lang.String)
 2018-05-12 13:12:07.164  INFO 76572 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
 ```
 
@@ -103,7 +104,7 @@ com.alipay.sofa.tracer.zipkin.baseUrl=http://localhost:9411
 
 ## 查看 Zipkin 服务端展示
 
-打开 Zipkin 服务端界面，假设我们部署的 Zipkin 服务端的地址是 `http://zipkin-cloud-3.host.net:9411`，打开 URL 并搜索 `zipkin`(由于我们本地访问的地址是 localhost:8080/helloZipkin)，可以看到展示的链路图。
+打开 Zipkin 服务端界面，假设我们部署的 Zipkin 服务端的地址是 `http://jaeger-cloud-3.host.net:9411`，打开 URL 并搜索 `jaeger`(由于我们本地访问的地址是 localhost:8080/helloZipkin)，可以看到展示的链路图。
 
 ## Spring 工程运行
 

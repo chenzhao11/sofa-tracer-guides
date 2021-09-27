@@ -86,7 +86,7 @@ public class SampleRestController {
 ```
 2018-05-11 11:55:11.932  INFO 66490 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'SpringMvcOpenTracingFilter' to urls: [/*]
 2018-05-11 11:55:13.961  INFO 66490 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
-2018-05-11 11:55:13.970  INFO 66490 --- [           main] c.a.s.t.e.springmvc.DemoApplication      : Started DemoApplication in 8.361 seconds (JVM running for 9.34)
+2018-05-11 11:55:13.970  INFO 66490 --- [           main] c.a.s.t.e.springmvc.skywalking.DemoApplication      : Started skywalking.DemoApplication in 8.361 seconds (JVM running for 9.34)
 ```
 
 可以通过在浏览器中输入 [http://localhost:8080/springmvc](http://localhost:8080/springmvc) 来访问 REST 服务，结果类似如下：

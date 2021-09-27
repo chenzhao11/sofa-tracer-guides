@@ -58,7 +58,7 @@ logging.path=./logs
 2018-08-29 20:12:26.270  INFO 31488 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'simpleDataSource' has been autodetected for JMX exposure
 2018-08-29 20:12:26.273  INFO 31488 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'simpleDataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=simpleDataSource,type=DruidDataSource]
 2018-08-29 20:12:26.327  INFO 31488 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
-2018-08-29 20:12:26.331  INFO 31488 --- [           main] c.a.s.t.e.datasource.DemoApplication     : Started DemoApplication in 3.799 seconds (JVM running for 4.745)
+2018-08-29 20:12:26.331  INFO 31488 --- [           main] c.a.s.t.e.datasource.skywalking.DemoApplication     : Started skywalking.DemoApplication in 3.799 seconds (JVM running for 4.745)
 ```
 
 该样例工程使用 H2 内存数据库，并暴露 /create 用于新建一张数据表，用户访问 /create 即可执行创建数据库表 SQL 语句：

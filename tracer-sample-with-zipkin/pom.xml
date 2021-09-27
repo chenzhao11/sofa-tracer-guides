@@ -17,7 +17,7 @@
             <groupId>com.alipay.sofa</groupId>
             <artifactId>tracer-sofa-boot-starter</artifactId>
         </dependency>
-        <!-- zipkin client -->
+        <!-- jaeger client -->
         <dependency>
             <groupId>io.zipkin.zipkin2</groupId>
             <artifactId>zipkin</artifactId>

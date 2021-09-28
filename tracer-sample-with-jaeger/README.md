@@ -158,5 +158,5 @@ Jaeger服务端的启动可以使用`jaegertracing/all-in-one:1.23`docker镜像�
 
 ## Spring 工程运行
 
-对于一般的 Spring 工程，我们通常使用 tomcat/jetty 作为 servlet 容器来启动应用。具体工程参考 [在 Spring 工程中使用 SOFATracer](https://github.com/glmapper/tracer-zipkin-plugin-demo)
+对于一般的 Spring 工程，我们通常使用 tomcat/jetty 作为 servlet 容器来启动应用。具体工程参考 [在 Spring 工程中上传数据到Jaeger](https://github.com/chenzhao11/tracer-jaeger-plugin-demo)
 

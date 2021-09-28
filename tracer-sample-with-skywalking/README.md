@@ -145,7 +145,7 @@ com.alipay.sofa.tracer.skywalking.max-buffer-size=10000
 
 ## 启动Skywalking服务端
 
-Skywalking服务端可以使用官方提供的[docker-compose.yml](https://github.com/apache/skywalking/tree/master/docker)来启动镜像。
+Skywalking Server可以根据官方的[the user guide for OAP](https://github.com/apache/skywalking/blob/master/docs/en/setup/backend/docker.md) 和 [the user guide for UI](https://github.com/apache/skywalking/blob/master/docs/en/setup/backend/ui-setup.md#start-with-docker-image) 来搭建
 
 ## 运行
 
@@ -168,5 +168,5 @@ Skywalking服务端可以使用官方提供的[docker-compose.yml](https://githu
 
 ## Spring 工程运行
 
-对于一般的 Spring 工程，我们通常使用 tomcat/jetty 作为 servlet 容器来启动应用。具体工程参考 [在 Spring 工程中使用 SOFATracer](https://github.com/glmapper/tracer-zipkin-plugin-demo)
+对于一般的 Spring 工程，我们通常使用 tomcat/jetty 作为 servlet 容器来启动应用。具体工程参考 [在 Spring 工程中上传数据到SkyWalking](https://github.com/chenzhao11/tracer-skywalking-plugin-demo)
 

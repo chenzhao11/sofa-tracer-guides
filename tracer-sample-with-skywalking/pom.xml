@@ -35,41 +35,6 @@
         </dependency>
         <dependency>
             <groupId>com.alipay.sofa</groupId>
-            <artifactId>sofa-tracer-mongodb-plugin</artifactId>
-            <version>${sofa.tracer.version}</version>
-            <scope>system</scope>
-            <systemPath>${pom.basedir}/src/main/resources/lib/sofa-tracer-mongodb-plugin-3.1.1.jar
-            </systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>sofa-tracer-spring-cloud-plugin</artifactId>
-            <version>${sofa.tracer.version}</version>
-            <scope>system</scope>
-            <systemPath>
-                ${pom.basedir}/src/main/resources/lib/sofa-tracer-spring-cloud-plugin-3.1.1.jar
-            </systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>sofa-tracer-okhttp-plugin</artifactId>
-            <version>${sofa.tracer.version}</version>
-            <scope>system</scope>
-            <systemPath>${pom.basedir}/src/main/resources/lib/sofa-tracer-okhttp-plugin-3.1.1.jar
-            </systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>sofa-tracer-rocketmq-plugin</artifactId>
-            <version>3.1.1</version>
-            <scope>system</scope>
-            <systemPath>
-                ${pom.basedir}/src/main/resources/lib/sofa-tracer-rocketmq-plugin-3.1.1.jar
-            </systemPath>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alipay.sofa</groupId>
             <artifactId>sofa-tracer-skywalking-plugin</artifactId>
             <version>${sofa.tracer.version}</version>
             <scope>system</scope>
@@ -77,24 +42,6 @@
                 ${pom.basedir}/src/main/resources/lib/sofa-tracer-skywalking-plugin-3.1.1.jar
             </systemPath>
         </dependency>
-        <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>sofa-tracer-dubbo-plugin</artifactId>
-            <version>${sofa.tracer.version}</version>
-            <scope>system</scope>
-            <systemPath>${pom.basedir}/src/main/resources/lib/sofa-tracer-dubbo-plugin-3.1.1.jar
-            </systemPath>
-        </dependency>
-
-
-        <!-- need to add these dependencies manually-->
-        <!--一定要自己添加的依赖-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.51</version>
-        </dependency>
-
         <dependency>
             <groupId>com.alipay.sofa</groupId>
             <artifactId>sofa-tracer-datasource-plugin</artifactId>
@@ -106,6 +53,16 @@
         <dependency>
             <groupId>com.alipay.sofa</groupId>
             <artifactId>sofa-tracer-springmvc-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>sofa-tracer-resttmplate-plugin</artifactId>
+        </dependency>
+        <!-- need to add these dependencies manually-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.51</version>
         </dependency>
         <!-- opentracing dependency -->
         <dependency>
@@ -128,8 +85,6 @@
             <artifactId>opentracing-util</artifactId>
             <version>${opentracing.version}</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

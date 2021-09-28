@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * sample of reporting spans to Jaeger
+ * sample of reporting spans to SkyWalking
  * @author: zhaochen
  */
 @RestController

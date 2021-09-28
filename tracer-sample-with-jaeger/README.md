@@ -35,15 +35,60 @@
 
 这里的 ${sofa.boot.version} 指定具体的 SOFABoot 版本，参考[发布历史](https://github.com/alipay/sofa-build/releases)。
 
-## 添加 SOFATracer starter
+## 添加 SOFATracer中相关依赖
 
 工程中添加 SOFATracer 依赖：
 
 ```xml
-<dependency>
-    <groupId>com.alipay.sofa</groupId>
-    <artifactId>tracer-sofa-boot-starter</artifactId>
-</dependency>
+    	<dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>tracer-sofa-boot-starter</artifactId>
+            <version>3.1.1</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/src/main/resources/lib/tracer-sofa-boot-starter-3.1.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>sofa-tracer-jaeger-plugin</artifactId>
+            <version>3.1.1</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/src/main/resources/lib/sofa-tracer-jaeger-plugin-3.1.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>tracer-core</artifactId>
+            <version>3.1.1</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/src/main/resources/lib/tracer-core-3.1.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>sofa-tracer-datasource-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>sofa-tracer-flexible-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>sofa-tracer-resttmplate-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>sofa-tracer-springmvc-plugin</artifactId>
+        </dependency>
+```
+
+因为现在的Jar包在本地所以需要设置<includeSystemScope>为true
+
+```xml
+        <plugin>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-maven-plugin</artifactId>
+             <configuration>
+                 <includeSystemScope>true</includeSystemScope>
+             </configuration>
+         </plugin>
 ```
 
 ## 配置文件
@@ -114,3 +159,4 @@ Jaeger服务端的启动可以使用`jaegertracing/all-in-one:1.23`docker镜像�
 ## Spring 工程运行
 
 对于一般的 Spring 工程，我们通常使用 tomcat/jetty 作为 servlet 容器来启动应用。具体工程参考 [在 Spring 工程中使用 SOFATracer](https://github.com/glmapper/tracer-zipkin-plugin-demo)
+
